@@ -1,0 +1,119 @@
+[providers.ollama]
+type = "Ollama"
+
+[databases.neo4j]
+type = "Neo4j"
+uri = "{{ env('NEO4J_URI') }}"
+password = "{{ env('NEO4J_PASSWORD') }}"
+
+[retrievers.neo4j-embedding-triplet-textual]
+type = "Embedder"
+provider = "ollama"
+model = "embeddinggemma:latest"
+top_k = 3
+
+[retrievers.neo4j-embedding-triplet-textual.extra.neo4j]
+type = "Neo4j"
+neighborhood = 1
+index = "UMLS_INDEX"
+translation = {
+  type = "TextualTriplet",
+  node_formats = {
+    "UMLSAtom" = "the atom '{value}' from the source vocabulary {source}",
+    "UMLSConcept" = "the UMLS concept {ui}",
+    "UMLSDefinition" = "the definition '{value}'",
+    "UMLSLexical" = "the lexical variant group {ui}",
+    "UMLSSemanticRelation" = "the semantic relation '{name}'",
+    "UMLSSemanticType" = "the semantic type '{name}'",
+    "UMLSString" = "the string {ui}"
+  },
+  property_formats = {
+    "UMLSAtom" = [
+      "{FROM} has the atom unique identifier {ui} and the source identifier {sourceIdentifier}.",
+      "{FROM} has the source-asserted atom identifier {sourceAssertedAtomIdentifier}.",
+      "{FROM} has the source-asserted concept identifier {sourceAssertedConceptIdentifier}.",
+      "{FROM} has the source-asserted descriptor identifier {sourceAssertedDescriptorIdentifier}."
+    ],
+    "UMLSDefinition" = [
+      "{FROM} comes from the source vocabulary {source} and has the attribute unique identifier {ui}.",
+      "{FROM} has the source-asserted attribute identifier {sourceAssertedAttributeIdentifier}."
+    ],
+    "UMLSSemanticRelation" = [
+      "{FROM} is defined as: {definition}",
+      "{FROM} has the abbreviation {abbreviation}, the unique identifier {ui}, and the tree number {treeNumber} in the semantic network.",
+      "{FROM} is the inverse of the semantic relation '{inverseOfRelation}'."
+    ],
+    "UMLSSemanticType" = [
+      "{FROM} is defined as: {definition}",
+      "{FROM} has the abbreviation {abbreviation}, the unique identifier {ui}, and the tree number {treeNumber} in the semantic network.",
+      "{FROM} carries the usage note: {usageNote}"
+    ]
+  },
+  relation_formats = {
+    "IS_ATOM_OF" = "{FROM} is an atom of {TO} (preferred: {isPreferred}).",
+    "IS_STRING_OF" = "{FROM} is a string of {TO} (preferred: {isPreferred}).",
+    "IS_LEXICAL_OF" = "{FROM} is a lexical variant of {TO} (preferred: {isPreferred}).",
+    "HAS_DEFINITION" = "{FROM} is described by {TO}.",
+    "HAS_SEMANTIC_TYPE" = "{FROM} is classified as {TO}.",
+    "MENAD_SIMILARITY" = "{FROM} is semantically similar to {TO} with a MENAD similarity of {weight}.",
+    "PARENT_OF" = "{FROM} is a parent of {TO} through the relationship '{relationshipLabel}'.",
+    "CHILD_OF" = "{FROM} is a child of {TO} through the relationship '{relationshipLabel}'.",
+    "BROADER_THAN" = "{FROM} is broader than {TO} through the relationship '{relationshipLabel}'.",
+    "NARROWER_THAN" = "{FROM} is narrower than {TO} through the relationship '{relationshipLabel}'.",
+    "SYNONYM_OF" = "{FROM} is a synonym of {TO} through the relationship '{relationshipLabel}'.",
+    "POSSIBLY_SYNONYM_OF" = "{FROM} is possibly a synonym of {TO} through the relationship '{relationshipLabel}'.",
+    "SIMILAR_TO" = "{FROM} is similar to {TO} through the relationship '{relationshipLabel}'.",
+    "HAS_OTHER_RELATIONSHIP" = "{FROM} is related to {TO} through the relationship '{relationshipLabel}'.",
+    "QUALIFIED_BY" = "{FROM} is qualified by {TO} through the relationship '{relationshipLabel}'.",
+    "HAS_ALLOWED_QUALIFIER" = "{FROM} allows {TO} as a qualifier through the relationship '{relationshipLabel}'.",
+    "IS_A" = "{FROM} is a kind of {TO}.",
+    "ADJACENT_TO" = "{FROM} is adjacent to {TO}.",
+    "AFFECTS" = "{FROM} affects {TO}.",
+    "ANALYZES" = "{FROM} analyzes {TO}.",
+    "ASSESSES_EFFECT_OF" = "{FROM} assesses the effect of {TO}.",
+    "ASSOCIATED_WITH" = "{FROM} is associated with {TO}.",
+    "BRANCH_OF" = "{FROM} is a branch of {TO}.",
+    "CARRIES_OUT" = "{FROM} carries out {TO}.",
+    "CAUSES" = "{FROM} causes {TO}.",
+    "COMPLICATES" = "{FROM} complicates {TO}.",
+    "CONCEPTUALLY_RELATED_TO" = "{FROM} is conceptually related to {TO}.",
+    "CONCEPTUAL_PART_OF" = "{FROM} is a conceptual part of {TO}.",
+    "CONNECTED_TO" = "{FROM} is connected to {TO}.",
+    "CONSISTS_OF" = "{FROM} consists of {TO}.",
+    "CONTAINS" = "{FROM} contains {TO}.",
+    "CO_OCCURS_WITH" = "{FROM} co-occurs with {TO}.",
+    "DEGREE_OF" = "{FROM} is a degree of {TO}.",
+    "DERIVATIVE_OF" = "{FROM} is a derivative of {TO}.",
+    "DEVELOPMENTAL_FORM_OF" = "{FROM} is a developmental form of {TO}.",
+    "DIAGNOSES" = "{FROM} diagnoses {TO}.",
+    "DISRUPTS" = "{FROM} disrupts {TO}.",
+    "EVALUATION_OF" = "{FROM} is an evaluation of {TO}.",
+    "EXHIBITS" = "{FROM} exhibits {TO}.",
+    "INDICATES" = "{FROM} indicates {TO}.",
+    "INGREDIENT_OF" = "{FROM} is an ingredient of {TO}.",
+    "INTERACTS_WITH" = "{FROM} interacts with {TO}.",
+    "INTERCONNECTS" = "{FROM} interconnects {TO}.",
+    "ISSUE_IN" = "{FROM} is an issue in {TO}.",
+    "LOCATION_OF" = "{FROM} is the location of {TO}.",
+    "MANAGES" = "{FROM} manages {TO}.",
+    "MANIFESTATION_OF" = "{FROM} is a manifestation of {TO}.",
+    "MEASUREMENT_OF" = "{FROM} is a measurement of {TO}.",
+    "MEASURES" = "{FROM} measures {TO}.",
+    "METHOD_OF" = "{FROM} is a method of {TO}.",
+    "OCCURS_IN" = "{FROM} occurs in {TO}.",
+    "PART_OF" = "{FROM} is part of {TO}.",
+    "PERFORMS" = "{FROM} performs {TO}.",
+    "PRACTICES" = "{FROM} practices {TO}.",
+    "PRECEDES" = "{FROM} precedes {TO}.",
+    "PREVENTS" = "{FROM} prevents {TO}.",
+    "PROCESS_OF" = "{FROM} is a process of {TO}.",
+    "PRODUCES" = "{FROM} produces {TO}.",
+    "PROPERTY_OF" = "{FROM} is a property of {TO}.",
+    "RESULT_OF" = "{FROM} is a result of {TO}.",
+    "SURROUNDS" = "{FROM} surrounds {TO}.",
+    "TRAVERSES" = "{FROM} traverses {TO}.",
+    "TREATS" = "{FROM} treats {TO}.",
+    "TRIBUTARY_OF" = "{FROM} is a tributary of {TO}.",
+    "USES" = "{FROM} uses {TO}."
+  }
+}

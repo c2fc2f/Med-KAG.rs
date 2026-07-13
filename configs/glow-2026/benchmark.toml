@@ -1,0 +1,19 @@
+[qwen35-9b-ollama-native]
+provider = "ollama"
+model = "qwen3.5:9b"
+temperature = 0.0
+tokens = 10000
+system_prompt = '''{{ file('examples/prompt/glow-2026/prompt_mcq.md') }}'''
+datasets = [ "pubmedqa" ]
+
+[qwen35-9b-ollama-neo4j-embedding-triplet-textual]
+provider = "ollama"
+model = "qwen3.5:9b"
+temperature = 0.0
+tokens = 10000
+system_prompt = '''{{ file('examples/prompt/glow-2026/umls_prompt_mcq.md') }}'''
+datasets = [ "pubmedqa" ]
+augmented_generation = {
+  retriever = "neo4j-embedding-triplet-textual",
+  database = "neo4j"
+}
