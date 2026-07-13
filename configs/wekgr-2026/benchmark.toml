@@ -3,7 +3,7 @@ provider = "ollama"
 model = "qwen3.5:9b"
 temperature = 0.0
 tokens = 10000
-system_prompt = '''{{ file('examples/prompt/wekgr-2026/prompt_mcq.md') }}'''
+system_prompt = '''{{ file('prompts/wekgr-2026/prompt_mcq.md') }}'''
 datasets = [ "pubmedqa" ]
 
 [qwen35-9b-ollama-neo4j-embedding-triplet-formal]
@@ -11,7 +11,7 @@ provider = "ollama"
 model = "qwen3.5:9b"
 temperature = 0.0
 tokens = 10000
-system_prompt = '''{{ file('examples/prompt/wekgr-2026/pmu_prompt_mcq.md') }}'''
+system_prompt = '''{{ file('prompts/wekgr-2026/pmu_prompt_mcq.md') }}'''
 datasets = [ "pubmedqa" ]
 augmented_generation = {
   retriever = "neo4j-embedding-triplet-formal",
