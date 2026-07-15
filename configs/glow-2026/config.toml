@@ -19,31 +19,31 @@ index = "UMLS_INDEX"
 translation = {
   type = "TextualTriplet",
   node_formats = {
-    "UMLSAtom" = "the atom '{value}' from the source vocabulary {source}",
-    "UMLSConcept" = "the UMLS concept {ui}",
-    "UMLSDefinition" = "the definition '{value}'",
-    "UMLSLexical" = "the lexical variant group {ui}",
-    "UMLSSemanticRelation" = "the semantic relation '{name}'",
-    "UMLSSemanticType" = "the semantic type '{name}'",
-    "UMLSString" = "the string {ui}"
+    "UMLS:UMLSMetathesaurus:UMLSConcept" = "the UMLS concept {ui}",
+    "UMLS:UMLSMetathesaurus:UMLSLexical" = "the lexical variant group {ui}",
+    "UMLS:UMLSMetathesaurus:UMLSString" = "the string {ui}",
+    "UMLS:UMLSMetathesaurus:UMLSAtom" = "the atom '{value}' from the source vocabulary {source}",
+    "UMLS:UMLSMetathesaurus:UMLSAttribute:UMLSDefinition" = "the definition '{value}'",
+    "UMLS:UMLSSemanticNetwork:UMLSSemanticRelation" = "the semantic relation '{name}'",
+    "UMLS:UMLSSemanticNetwork:UMLSSemanticType" = "the semantic type '{name}'"
   },
   property_formats = {
-    "UMLSAtom" = [
+    "UMLS:UMLSMetathesaurus:UMLSAtom" = [
       "{FROM} has the atom unique identifier {ui} and the source identifier {sourceIdentifier}.",
       "{FROM} has the source-asserted atom identifier {sourceAssertedAtomIdentifier}.",
       "{FROM} has the source-asserted concept identifier {sourceAssertedConceptIdentifier}.",
       "{FROM} has the source-asserted descriptor identifier {sourceAssertedDescriptorIdentifier}."
     ],
-    "UMLSDefinition" = [
+    "UMLS:UMLSMetathesaurus:UMLSAttribute:UMLSDefinition" = [
       "{FROM} comes from the source vocabulary {source} and has the attribute unique identifier {ui}.",
       "{FROM} has the source-asserted attribute identifier {sourceAssertedAttributeIdentifier}."
     ],
-    "UMLSSemanticRelation" = [
+    "UMLS:UMLSSemanticNetwork:UMLSSemanticRelation" = [
       "{FROM} is defined as: {definition}",
       "{FROM} has the abbreviation {abbreviation}, the unique identifier {ui}, and the tree number {treeNumber} in the semantic network.",
       "{FROM} is the inverse of the semantic relation '{inverseOfRelation}'."
     ],
-    "UMLSSemanticType" = [
+    "UMLS:UMLSSemanticNetwork:UMLSSemanticType" = [
       "{FROM} is defined as: {definition}",
       "{FROM} has the abbreviation {abbreviation}, the unique identifier {ui}, and the tree number {treeNumber} in the semantic network.",
       "{FROM} carries the usage note: {usageNote}"
