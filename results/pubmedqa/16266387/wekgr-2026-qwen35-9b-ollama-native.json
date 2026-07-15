@@ -1,20 +1,3 @@
-{
-  "ok": {
-    "result": "A",
-    "stats": {
-      "prompt": "Based on your internal medical knowledge, answer the following question:\n\nFast foods - are they a risk factor for asthma?\n\nChoices:\nA: yes\nB: no\nC: maybe\n\nFollow these strict rules:\n1. Your final output must be EXACTLY AND EXCLUSIVELY the single key corresponding to the correct choice (e.g., 'a', 'b', 'c'). Do not include any explanations, reasoning, punctuation, or additional text.\n2. If you do not have the information needed to answer the question, reply exactly with: 'I don't know.'",
-      "retrieval": null,
-      "config": {
-        "augmented_generation": null,
-        "provider": "ollama",
-        "model": "qwen3.5:9b",
-        "temperature": 0.0,
-        "tokens": 10000
-      },
-      "time": {
-        "secs": 100,
-        "nanos": 109121249
-      }
-    }
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:c3367824bc09b8ba78bc35b9f35f410265aef31da9b40da442cca45f6f153480
+size 853

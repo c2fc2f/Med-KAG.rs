@@ -1,20 +1,3 @@
-{
-  "ok": {
-    "result": "A",
-    "stats": {
-      "prompt": "Based on your internal medical knowledge, answer the following question:\n\nHypotension in patients with coronary disease: can profound hypotensive events cause myocardial ischaemic events?\n\nChoices:\nA: yes\nB: no\nC: maybe\n\nFollow these strict rules:\n1. Your final output must be EXACTLY AND EXCLUSIVELY the single key corresponding to the correct choice (e.g., 'a', 'b', 'c'). Do not include any explanations, reasoning, punctuation, or additional text.\n2. If you do not have the information needed to answer the question, reply exactly with: 'I don't know.'",
-      "retrieval": null,
-      "config": {
-        "augmented_generation": null,
-        "provider": "ollama",
-        "model": "qwen3.5:9b",
-        "temperature": 0.0,
-        "tokens": 10000
-      },
-      "time": {
-        "secs": 234,
-        "nanos": 141164311
-      }
-    }
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:894b5f05f7b09fdb1b32ce1fe3b91bfb4c0f819619ac23cf43a92cb34b143f3b
+size 919

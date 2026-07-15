@@ -1,20 +1,3 @@
-{
-  "ok": {
-    "result": "A",
-    "stats": {
-      "prompt": "Based on your internal medical knowledge, answer the following question:\n\nDoes confined placental mosaicism account for adverse perinatal outcomes in IVF pregnancies?\n\nChoices:\nA: yes\nB: no\nC: maybe\n\nFollow these strict rules:\n1. Your final output must be EXACTLY AND EXCLUSIVELY the single key corresponding to the correct choice (e.g., 'a', 'b', 'c'). Do not include any explanations, reasoning, punctuation, or additional text.\n2. If you do not have the information needed to answer the question, reply exactly with: 'I don't know.'",
-      "retrieval": null,
-      "config": {
-        "augmented_generation": null,
-        "provider": "ollama",
-        "model": "qwen3.5:9b",
-        "temperature": 0.0,
-        "tokens": 10000
-      },
-      "time": {
-        "secs": 70,
-        "nanos": 204623433
-      }
-    }
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6b477ca70606a87169d0146ab006aa46163e9bc48c1fe02050be44a480ef0863
+size 897

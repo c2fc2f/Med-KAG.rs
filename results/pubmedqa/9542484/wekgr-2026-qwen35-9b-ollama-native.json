@@ -1,20 +1,3 @@
-{
-  "ok": {
-    "result": "A",
-    "stats": {
-      "prompt": "Based on your internal medical knowledge, answer the following question:\n\nDoes successful completion of the Perinatal Education Programme result in improved obstetric practice?\n\nChoices:\nA: yes\nB: no\nC: maybe\n\nFollow these strict rules:\n1. Your final output must be EXACTLY AND EXCLUSIVELY the single key corresponding to the correct choice (e.g., 'a', 'b', 'c'). Do not include any explanations, reasoning, punctuation, or additional text.\n2. If you do not have the information needed to answer the question, reply exactly with: 'I don't know.'",
-      "retrieval": null,
-      "config": {
-        "augmented_generation": null,
-        "provider": "ollama",
-        "model": "qwen3.5:9b",
-        "temperature": 0.0,
-        "tokens": 10000
-      },
-      "time": {
-        "secs": 27,
-        "nanos": 934600150
-      }
-    }
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:84b97d170464cc4581562927c2ef887fe85727ed28d7d54208d316f0ba44a887
+size 907

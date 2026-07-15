@@ -1,0 +1,149 @@
+Node properties:
+- **UMLSAtom**
+  - `source`: STRING NOT NULL REQUIRED Example: "MSHJPN"
+  - `sourceAssertedAtomIdentifier`: STRING NOT NULL Example: "985024015"
+  - `sourceAssertedConceptIdentifier`: STRING NOT NULL Example: "M0011781"
+  - `sourceAssertedDescriptorIdentifier`: STRING NOT NULL Example: "D007545"
+  - `sourceIdentifier`: STRING NOT NULL REQUIRED Example: "D007545"
+  - `ui`: STRING NOT NULL REQUIRED Example: "A15694123"
+  - `value`: STRING NOT NULL REQUIRED Example: "塩酸イソプレナリン"
+- **UMLSConcept**
+  - `ui`: STRING NOT NULL REQUIRED Example: "C0000005"
+- **UMLSDefinition**
+  - `source`: STRING NOT NULL REQUIRED Example: "MSH"
+  - `sourceAssertedAttributeIdentifier`: STRING NOT NULL Example: "3874149010"
+  - `ui`: STRING NOT NULL REQUIRED Example: "AT38152019"
+  - `value`: STRING NOT NULL REQUIRED Example: "Synthetic phospholipid used in liposomes and lipid bilayers to study biological membranes. It is also a major constituent of PULMONARY SURFACTANTS."
+- **UMLSLexical**
+  - `ui`: STRING NOT NULL REQUIRED Example: "L0000005"
+- **UMLSSemanticRelation**
+  - `abbreviation`: STRING NOT NULL REQUIRED Example: "PR"
+  - `definition`: STRING NOT NULL REQUIRED Example: "Related by virtue of some physical attribute or characteristic."
+  - `inverseOfRelation`: STRING NOT NULL REQUIRED Example: "physically_related_to"
+  - `name`: STRING NOT NULL REQUIRED Example: "physically_related_to"
+  - `treeNumber`: STRING NOT NULL REQUIRED Example: "R1"
+  - `ui`: STRING NOT NULL REQUIRED Example: "T132"
+- **UMLSSemanticType**
+  - `abbreviation`: STRING NOT NULL REQUIRED Example: "orgm"
+  - `definition`: STRING NOT NULL REQUIRED Example: "Generally, a living individual, including all plants and animals."
+  - `name`: STRING NOT NULL REQUIRED Example: "Organism"
+  - `treeNumber`: STRING NOT NULL REQUIRED Example: "A1.1"
+  - `ui`: STRING NOT NULL REQUIRED Example: "T001"
+  - `usageNote`: STRING NOT NULL Example: "Few concepts will be assigned to this broad type."
+- **UMLSString**
+  - `ui`: STRING NOT NULL REQUIRED Example: "S4085862"
+
+Relationship properties:
+- **:`BROADER_THAN`**
+  - `relationshipLabel`: STRING NOT NULL Example: "has_tradename"
+- **:`CHILD_OF`**
+  - `relationshipGroup`: STRING NOT NULL Example: "0"
+  - `relationshipLabel`: STRING NOT NULL Example: "isa"
+- **:`HAS_ALLOWED_QUALIFIER`**
+  - `relationshipLabel`: STRING NOT NULL Example: "modifies"
+- **:`HAS_OTHER_RELATIONSHIP`**
+  - `relationshipGroup`: STRING NOT NULL Example: "1"
+  - `relationshipLabel`: STRING NOT NULL Example: "measures"
+- **:`IS_ATOM_OF`**
+  - `isPreferred`: BOOLEAN NOT NULL REQUIRED Min: false, Max: true
+- **:`IS_LEXICAL_OF`**
+  - `isPreferred`: BOOLEAN NOT NULL REQUIRED Min: false, Max: true
+- **:`IS_STRING_OF`**
+  - `isPreferred`: BOOLEAN NOT NULL REQUIRED Min: false, Max: true
+- **:`MENAD_SIMILARITY`**
+  - `weight`: FLOAT NOT NULL REQUIRED Min: 0.5, Max: 1.0000008
+- **:`NARROWER_THAN`**
+  - `relationshipGroup`: STRING NOT NULL Example: "0"
+  - `relationshipLabel`: STRING NOT NULL Example: "form_of"
+- **:`PARENT_OF`**
+  - `relationshipGroup`: STRING NOT NULL Example: "0"
+  - `relationshipLabel`: STRING NOT NULL Example: "inverse_isa"
+- **:`POSSIBLY_SYNONYM_OF`**
+  - `relationshipGroup`: STRING NOT NULL Example: "1"
+  - `relationshipLabel`: STRING NOT NULL Example: "mapped_to"
+- **:`QUALIFIED_BY`**
+  - `relationshipLabel`: STRING NOT NULL Example: "has_actual_outcome"
+- **:`SIMILAR_TO`**
+  - `relationshipLabel`: STRING NOT NULL REQUIRED Example: "mapped_from"
+- **:`SYNONYM_OF`**
+  - `relationshipLabel`: STRING NOT NULL Example: "translation_of"
+
+The relationships:
+(:UMLSAtom)-([:BROADER_THAN])-> (:UMLSAtom)
+(:UMLSAtom)-([:BROADER_THAN])-> (:UMLSConcept)
+(:UMLSAtom)-([:CHILD_OF])-> (:UMLSAtom)
+(:UMLSAtom)-([:HAS_ALLOWED_QUALIFIER])-> (:UMLSAtom)
+(:UMLSAtom)-([:HAS_DEFINITION])-> (:UMLSDefinition)
+(:UMLSAtom)-([:HAS_OTHER_RELATIONSHIP])-> (:UMLSAtom)
+(:UMLSAtom)-([:HAS_OTHER_RELATIONSHIP])-> (:UMLSConcept)
+(:UMLSAtom)-([:IS_ATOM_OF])-> (:UMLSString)
+(:UMLSAtom)-([:NARROWER_THAN])-> (:UMLSAtom)
+(:UMLSAtom)-([:NARROWER_THAN])-> (:UMLSConcept)
+(:UMLSAtom)-([:PARENT_OF])-> (:UMLSAtom)
+(:UMLSAtom)-([:POSSIBLY_SYNONYM_OF])-> (:UMLSAtom)
+(:UMLSAtom)-([:QUALIFIED_BY])-> (:UMLSAtom)
+(:UMLSAtom)-([:SIMILAR_TO])-> (:UMLSAtom)
+(:UMLSAtom)-([:SYNONYM_OF])-> (:UMLSAtom)
+(:UMLSConcept)-([:BROADER_THAN])-> (:UMLSAtom)
+(:UMLSConcept)-([:BROADER_THAN])-> (:UMLSConcept)
+(:UMLSConcept)-([:HAS_DEFINITION])-> (:UMLSDefinition)
+(:UMLSConcept)-([:HAS_OTHER_RELATIONSHIP])-> (:UMLSAtom)
+(:UMLSConcept)-([:HAS_OTHER_RELATIONSHIP])-> (:UMLSConcept)
+(:UMLSConcept)-([:HAS_SEMANTIC_TYPE])-> (:UMLSSemanticType)
+(:UMLSConcept)-([:MENAD_SIMILARITY])-> (:UMLSConcept)
+(:UMLSConcept)-([:NARROWER_THAN])-> (:UMLSAtom)
+(:UMLSConcept)-([:NARROWER_THAN])-> (:UMLSConcept)
+(:UMLSLexical)-([:IS_LEXICAL_OF])-> (:UMLSConcept)
+(:UMLSSemanticRelation)-([:IS_A])-> (:UMLSSemanticRelation)
+(:UMLSSemanticRelation)-([:IS_A])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:ADJACENT_TO])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:AFFECTS])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:ANALYZES])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:ASSESSES_EFFECT_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:ASSOCIATED_WITH])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:BRANCH_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:CARRIES_OUT])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:CAUSES])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:COMPLICATES])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:CONCEPTUALLY_RELATED_TO])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:CONCEPTUAL_PART_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:CONNECTED_TO])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:CONSISTS_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:CONTAINS])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:CO_OCCURS_WITH])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:DEGREE_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:DERIVATIVE_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:DEVELOPMENTAL_FORM_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:DIAGNOSES])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:DISRUPTS])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:EVALUATION_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:EXHIBITS])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:INDICATES])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:INGREDIENT_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:INTERACTS_WITH])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:INTERCONNECTS])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:ISSUE_IN])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:IS_A])-> (:UMLSSemanticRelation)
+(:UMLSSemanticType)-([:IS_A])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:LOCATION_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:MANAGES])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:MANIFESTATION_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:MEASUREMENT_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:MEASURES])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:METHOD_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:OCCURS_IN])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:PART_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:PERFORMS])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:PRACTICES])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:PRECEDES])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:PREVENTS])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:PROCESS_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:PRODUCES])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:PROPERTY_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:RESULT_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:SURROUNDS])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:TRAVERSES])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:TREATS])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:TRIBUTARY_OF])-> (:UMLSSemanticType)
+(:UMLSSemanticType)-([:USES])-> (:UMLSSemanticType)
+(:UMLSString)-([:IS_STRING_OF])-> (:UMLSLexical)

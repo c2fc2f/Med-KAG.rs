@@ -1,20 +1,3 @@
-{
-  "ok": {
-    "result": "A",
-    "stats": {
-      "prompt": "Based on your internal medical knowledge, answer the following question:\n\nDoes the early adopter of drugs exist?\n\nChoices:\nA: yes\nB: no\nC: maybe\n\nFollow these strict rules:\n1. Your final output must be EXACTLY AND EXCLUSIVELY the single key corresponding to the correct choice (e.g., 'a', 'b', 'c'). Do not include any explanations, reasoning, punctuation, or additional text.\n2. If you do not have the information needed to answer the question, reply exactly with: 'I don't know.'",
-      "retrieval": null,
-      "config": {
-        "augmented_generation": null,
-        "provider": "ollama",
-        "model": "qwen3.5:9b",
-        "temperature": 0.0,
-        "tokens": 10000
-      },
-      "time": {
-        "secs": 282,
-        "nanos": 772245949
-      }
-    }
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:d543c18b66ddecb4b2393511d7be64aa0bfccd3b5fb361f49077041a3165dbb6
+size 844

@@ -1,20 +1,3 @@
-{
-  "ok": {
-    "result": "B",
-    "stats": {
-      "prompt": "Based on your internal medical knowledge, answer the following question:\n\nUtility of unenhanced fat-suppressed T1-weighted MRI in children with sickle cell disease -- can it differentiate bone infarcts from acute osteomyelitis?\n\nChoices:\nA: yes\nB: no\nC: maybe\n\nFollow these strict rules:\n1. Your final output must be EXACTLY AND EXCLUSIVELY the single key corresponding to the correct choice (e.g., 'a', 'b', 'c'). Do not include any explanations, reasoning, punctuation, or additional text.\n2. If you do not have the information needed to answer the question, reply exactly with: 'I don't know.'",
-      "retrieval": null,
-      "config": {
-        "augmented_generation": null,
-        "provider": "ollama",
-        "model": "qwen3.5:9b",
-        "temperature": 0.0,
-        "tokens": 10000
-      },
-      "time": {
-        "secs": 267,
-        "nanos": 274326293
-      }
-    }
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:4e909aed7fb3042a2d70d38f14c664031c3fbbbc346e2da351f732ae7106f214
+size 959

@@ -1,20 +1,3 @@
-{
-  "ok": {
-    "result": "A",
-    "stats": {
-      "prompt": "Based on your internal medical knowledge, answer the following question:\n\nCharacterization of the gender dimorphism after injury and hemorrhagic shock: are hormonal differences responsible?\n\nChoices:\nA: yes\nB: no\nC: maybe\n\nFollow these strict rules:\n1. Your final output must be EXACTLY AND EXCLUSIVELY the single key corresponding to the correct choice (e.g., 'a', 'b', 'c'). Do not include any explanations, reasoning, punctuation, or additional text.\n2. If you do not have the information needed to answer the question, reply exactly with: 'I don't know.'",
-      "retrieval": null,
-      "config": {
-        "augmented_generation": null,
-        "provider": "ollama",
-        "model": "qwen3.5:9b",
-        "temperature": 0.0,
-        "tokens": 10000
-      },
-      "time": {
-        "secs": 67,
-        "nanos": 671668003
-      }
-    }
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:80dd38d3d92b87307db4e96c3891c7763c24999f6e7de9b5f8d99c98c6177fc0
+size 920

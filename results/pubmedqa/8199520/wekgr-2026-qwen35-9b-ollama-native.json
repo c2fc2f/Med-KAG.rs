@@ -1,20 +1,3 @@
-{
-  "ok": {
-    "result": "B",
-    "stats": {
-      "prompt": "Based on your internal medical knowledge, answer the following question:\n\nAre physicians meeting the needs of family caregivers of the frail elderly?\n\nChoices:\nA: yes\nB: no\nC: maybe\n\nFollow these strict rules:\n1. Your final output must be EXACTLY AND EXCLUSIVELY the single key corresponding to the correct choice (e.g., 'a', 'b', 'c'). Do not include any explanations, reasoning, punctuation, or additional text.\n2. If you do not have the information needed to answer the question, reply exactly with: 'I don't know.'",
-      "retrieval": null,
-      "config": {
-        "augmented_generation": null,
-        "provider": "ollama",
-        "model": "qwen3.5:9b",
-        "temperature": 0.0,
-        "tokens": 10000
-      },
-      "time": {
-        "secs": 64,
-        "nanos": 442905945
-      }
-    }
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b0bb02b6ffea8bf00b60d7ae4d0b6c715f1c82c785cb84fdd86cba084f43e79c
+size 880

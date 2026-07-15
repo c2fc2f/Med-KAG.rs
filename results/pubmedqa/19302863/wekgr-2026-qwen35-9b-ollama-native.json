@@ -1,20 +1,3 @@
-{
-  "ok": {
-    "result": "B",
-    "stats": {
-      "prompt": "Based on your internal medical knowledge, answer the following question:\n\nIs the use of cyanoacrylate in intestinal anastomosis a good and reliable alternative?\n\nChoices:\nA: yes\nB: no\nC: maybe\n\nFollow these strict rules:\n1. Your final output must be EXACTLY AND EXCLUSIVELY the single key corresponding to the correct choice (e.g., 'a', 'b', 'c'). Do not include any explanations, reasoning, punctuation, or additional text.\n2. If you do not have the information needed to answer the question, reply exactly with: 'I don't know.'",
-      "retrieval": null,
-      "config": {
-        "augmented_generation": null,
-        "provider": "ollama",
-        "model": "qwen3.5:9b",
-        "temperature": 0.0,
-        "tokens": 10000
-      },
-      "time": {
-        "secs": 9,
-        "nanos": 663334763
-      }
-    }
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f6b7f6bb0f9597c1a7ee8d53c8aa3153e164dfef3729caf5b33f16058b340134
+size 890

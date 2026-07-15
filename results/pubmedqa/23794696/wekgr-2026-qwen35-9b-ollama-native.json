@@ -1,20 +1,3 @@
-{
-  "ok": {
-    "result": "B",
-    "stats": {
-      "prompt": "Based on your internal medical knowledge, answer the following question:\n\nDoes the bracket-ligature combination affect the amount of orthodontic space closure over three months?\n\nChoices:\nA: yes\nB: no\nC: maybe\n\nFollow these strict rules:\n1. Your final output must be EXACTLY AND EXCLUSIVELY the single key corresponding to the correct choice (e.g., 'a', 'b', 'c'). Do not include any explanations, reasoning, punctuation, or additional text.\n2. If you do not have the information needed to answer the question, reply exactly with: 'I don't know.'",
-      "retrieval": null,
-      "config": {
-        "augmented_generation": null,
-        "provider": "ollama",
-        "model": "qwen3.5:9b",
-        "temperature": 0.0,
-        "tokens": 10000
-      },
-      "time": {
-        "secs": 72,
-        "nanos": 637492442
-      }
-    }
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:5ff03ffb05f9c745a898e01b87c182366ac5bff613a922546f5c5d9f18fa26e0
+size 908

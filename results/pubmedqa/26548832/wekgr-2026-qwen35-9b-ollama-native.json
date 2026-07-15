@@ -1,20 +1,3 @@
-{
-  "ok": {
-    "result": "B",
-    "stats": {
-      "prompt": "Based on your internal medical knowledge, answer the following question:\n\nAssessing Patient Reported Outcomes Measures via Phone Interviews Versus Patient Self-Survey in the Clinic: Are We Measuring the Same Thing?\n\nChoices:\nA: yes\nB: no\nC: maybe\n\nFollow these strict rules:\n1. Your final output must be EXACTLY AND EXCLUSIVELY the single key corresponding to the correct choice (e.g., 'a', 'b', 'c'). Do not include any explanations, reasoning, punctuation, or additional text.\n2. If you do not have the information needed to answer the question, reply exactly with: 'I don't know.'",
-      "retrieval": null,
-      "config": {
-        "augmented_generation": null,
-        "provider": "ollama",
-        "model": "qwen3.5:9b",
-        "temperature": 0.0,
-        "tokens": 10000
-      },
-      "time": {
-        "secs": 196,
-        "nanos": 118738369
-      }
-    }
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b1fed5b9f8432813ef477dc9249e855d7b44a659de8b6b4072ae4366d79b71be
+size 946

@@ -1,20 +1,3 @@
-{
-  "ok": {
-    "result": "C",
-    "stats": {
-      "prompt": "Based on your internal medical knowledge, answer the following question:\n\nThe promise of specialty pharmaceuticals: are they worth the price?\n\nChoices:\nA: yes\nB: no\nC: maybe\n\nFollow these strict rules:\n1. Your final output must be EXACTLY AND EXCLUSIVELY the single key corresponding to the correct choice (e.g., 'a', 'b', 'c'). Do not include any explanations, reasoning, punctuation, or additional text.\n2. If you do not have the information needed to answer the question, reply exactly with: 'I don't know.'",
-      "retrieval": null,
-      "config": {
-        "augmented_generation": null,
-        "provider": "ollama",
-        "model": "qwen3.5:9b",
-        "temperature": 0.0,
-        "tokens": 10000
-      },
-      "time": {
-        "secs": 59,
-        "nanos": 576816732
-      }
-    }
-  }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:a8d5b7426a544000dca0a8b3a7e261fa166e1f1a743f24775da1b53d6aaf319b
+size 872
