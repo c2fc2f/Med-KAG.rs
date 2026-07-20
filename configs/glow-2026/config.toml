@@ -6,11 +6,28 @@ type = "Neo4j"
 uri = "{{ env('NEO4J_URI') }}"
 password = "{{ env('NEO4J_PASSWORD') }}"
 
+[retrievers.neo4j-embedding-triplet-formal]
+type = "Embedder"
+provider = "ollama"
+model = "embeddinggemma:latest"
+top_k = 4
+
+[retrievers.neo4j-embedding-triplet-formal.extra.neo4j]
+type = "Neo4j"
+neighborhood = 1
+index = "UMLS_INDEX"
+translation = {
+  type = "FormalTriplet",
+  property_filters = {
+    "UMLS:UMLSMetathesaurus:UMLSConcept" = [ "ui" ],
+  }
+}
+
 [retrievers.neo4j-embedding-triplet-textual]
 type = "Embedder"
 provider = "ollama"
 model = "embeddinggemma:latest"
-top_k = 3
+top_k = 4
 
 [retrievers.neo4j-embedding-triplet-textual.extra.neo4j]
 type = "Neo4j"
