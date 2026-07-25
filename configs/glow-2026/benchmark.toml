@@ -6,6 +6,14 @@ tokens = 10000
 system_prompt = '''{{ file('prompts/glow-2026/prompt_mcq.md') }}'''
 datasets = [ "pubmedqa" ]
 
+[gemma4-12b-ollama-native]
+provider = "ollama"
+model = "gemma4:12b"
+temperature = 0.0
+tokens = 10000
+system_prompt = '''{{ file('prompts/glow-2026/prompt_mcq.md') }}'''
+datasets = [ "pubmedqa" ]
+
 [qwen35-9b-ollama-neo4j-embedding-triplet-formal]
 provider = "ollama"
 model = "qwen3.5:9b"
@@ -18,9 +26,33 @@ augmented_generation = {
   database = "neo4j"
 }
 
+[gemma4-12b-ollama-neo4j-embedding-triplet-formal]
+provider = "ollama"
+model = "gemma4:12b"
+temperature = 0.0
+tokens = 10000
+system_prompt = '''{{ file('prompts/glow-2026/umls_formal_prompt_mcq.md') }}'''
+datasets = [ "pubmedqa" ]
+augmented_generation = {
+  retriever = "neo4j-embedding-triplet-formal",
+  database = "neo4j"
+}
+
 [qwen35-9b-ollama-neo4j-embedding-triplet-textual]
 provider = "ollama"
 model = "qwen3.5:9b"
+temperature = 0.0
+tokens = 10000
+system_prompt = '''{{ file('prompts/glow-2026/umls_textual_prompt_mcq.md') }}'''
+datasets = [ "pubmedqa" ]
+augmented_generation = {
+  retriever = "neo4j-embedding-triplet-textual",
+  database = "neo4j"
+}
+
+[gemma4-12b-ollama-neo4j-embedding-triplet-textual]
+provider = "ollama"
+model = "gemma4:12b"
 temperature = 0.0
 tokens = 10000
 system_prompt = '''{{ file('prompts/glow-2026/umls_textual_prompt_mcq.md') }}'''
